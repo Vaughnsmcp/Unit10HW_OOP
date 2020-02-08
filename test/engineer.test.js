@@ -1,6 +1,13 @@
 'use strict';
 
-const Engineer = require('../lib/Engineer');
+const Engineer = require('../lib/engineer');
+
+describe('Engineer', () => {
+    let engineer;
+    beforeEach(() => {
+    engineer = new Engineer('Foo', 1, 'test@test.com', 'GitHubUser');
+    });
+
 
 test('Can set GitHUb account via constructor', () => {
   const testValue = 'GitHubUser';
@@ -18,4 +25,5 @@ test('Can get GitHub username via getGithub()', () => {
   const testValue = 'GitHubUser';
   const engineer = new Engineer('Foo', 1, 'test@test.com', testValue);
   expect(engineer.getGithub()).toBe(testValue);
+});
 });
