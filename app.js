@@ -22,7 +22,7 @@ function addmenu() {
                 if (answer !== "") {
                     return true
                 }
-                return "go home"
+                return "That's not his name, and I'm telling."
 
             }
         },
@@ -37,7 +37,7 @@ function addmenu() {
                 if (okay) {
                     return true
                 }
-                return "Enter a number, or go home."
+                return "Enter a number."
             }
         },
         {
@@ -51,7 +51,7 @@ function addmenu() {
                 if (okay) {
                     return true
                 }
-                return "Enter an office number. Stop wasting my time."
+                return "Enter an office number."
             }
         }, {
             type: "input",
@@ -64,7 +64,7 @@ function addmenu() {
                 if (okay) {
                     return true
                 }
-                return "Enter a valid email or get a new hobby."
+                return "Enter a valid email."
             }
         }
     ])
