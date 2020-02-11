@@ -1,6 +1,6 @@
 'use strict';
 
-const Employee = require('./employee');
+const Employee = require('./Employee');
 
 class Manager extends Employee {
     constructor(name, id, email, officeNumber) {
@@ -9,7 +9,7 @@ class Manager extends Employee {
     }
     getRole() { return 'Manager' }
 
-    getGithub() {return this.officeNumber} 
+    getOfficeNumber() {return this.officeNumber} 
 
     }
 
