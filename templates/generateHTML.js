@@ -1,9 +1,8 @@
 function teamCard(teamMember) {
     return `
     <div class="card">
-      <div class="card-header">
-      ${teamMember.getName()} ${teamMember.getRole()} 
-        Engineer 
+      <div class="card-header bg-primary" style="color: whitesmoke">
+      ${teamMember.getName()} ${teamMember.getRole()}  
       </div>
       <div class="card-body">
           <div class="card" style="width: 18rem;">
@@ -34,17 +33,27 @@ module.exports=function generateHtml(teamMembers) {
     <html lang="en">
     
       <head>
-          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <meta http-equiv="X-UA-Compatible" content="ie=edge">
-          <title>Document</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+          header {
+              background-color: red;
+              color: whitesmoke;
+              height: 60px;
+              font-size: 25px;
+              margin-bottom: 50px;
+  
+          }
+        </style>
       </head>
       
       <body>
         <div class="container">
-          <header>My Team</header>
+        <header class="d-flex justify-content-center align-items-center">My Team</header>
           <div class="row d-flex flex-wrap justify-content-around">
                 ${teamMembers.map(teamMember => teamCard(teamMember))}
 
