@@ -1,6 +1,9 @@
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
+const generateHtml = require("./templates/generateHTML");
+const fs = require("fs");
+const path =  require("path");
 const teamMembers = []
 async function getEngineer() {
     const engineerInfo = await inquirer.prompt([
@@ -59,7 +62,7 @@ async function getEngineer() {
     const engineer = new Engineer(engineerInfo.engineerName, engineerInfo.engineerID, engineerInfo.engineerEmail, engineerInfo.engineerGitHubUserName);
     teamMembers.push(engineer)
 
-     chooseTeamMember()
+    chooseTeamMember()
 
 }
 async function getIntern() {
@@ -124,7 +127,7 @@ async function getIntern() {
 }
 
 async function getTeam() {
-     return await inquirer.prompt([{
+    return await inquirer.prompt([{
         type: "list",
         name: "teamMember",
         message: "Which type of team member would you like to add?",
@@ -136,19 +139,22 @@ async function getTeam() {
 async function chooseTeamMember() {
     try {
         const teamInfo = await getTeam()
-    
-        switch(teamInfo.teamMember) {
+
+        switch (teamInfo.teamMember) {
             case "Engineer":
-                
+
                 await getEngineer()
-              break;
+                break;
             case "Intern":
-                
+
                 await getIntern()
-              break;
+                break;
             default:
-              console.log("generateHTML", teamMembers)
-          }
+                fs.writeFile(path.resolve(__dirname, "output","index.html"),generateHtml(teamMembers), (err) => {
+                    if (err) throw err;
+                    console.log('The file has been saved!');
+                });
+        }
 
     } catch (error) {
         console.log(error)
@@ -159,7 +165,7 @@ async function chooseTeamMember() {
 
 }
 
-module.exports = { 
+module.exports = {
     getIntern, getEngineer, getTeam, chooseTeamMember,
     teamMembers,
 }
