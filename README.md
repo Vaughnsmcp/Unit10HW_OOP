@@ -2,8 +2,6 @@
 
 ## By _**Vaughn McPherson**_
 
-![TitlePageImage]()
-
 ## Description
 
 
@@ -19,9 +17,9 @@ _No known bugs._
 
 * _HTML_
 * _JavaScript_
-* _node_
-* _bootStrap_
+* _node.js_
 * _json_
+* _inquirer.js_
 
 
 ## License
