@@ -2,7 +2,11 @@
 
 ## By _**Vaughn McPherson**_
 
+![TitlePageImage](https://i.dlpng.com/static/png/5436183-vector-cartoon-characters-ultimate-packs-by-graphicmama-animated-cartoon-png-391_246_preview.png)
+
 ## Description
+
+This app utilizes node, json, and inquirer to help you organize your employee team. Simply run the app and follow the prompts. 
 
 
 ## Setup/Installation Requirements
